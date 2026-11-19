@@ -21,10 +21,24 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  // Add a new toy to the backend and update the page.
+  function handleAddToy(newToy) {
+    fetch("http://localhost:3001/toys", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newToy),
+    })
+      .then((response) => response.json())
+      .then((toy) => setToys([...toys, toy]))
+      .catch((error) => console.error("Error adding toy:", error));
+  }
+
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm onAddToy={handleAddToy} /> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
@@ -34,3 +48,4 @@ function App() {
 }
 
 export default App;
+q
