@@ -88,3 +88,7 @@ src/
 ## Author
 
 Terecinta Mocheche
+
+## Application Screenshot
+
+![Toy Tales Application](toy.png)
