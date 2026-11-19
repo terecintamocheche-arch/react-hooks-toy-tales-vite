@@ -1,3 +1,4 @@
+
 {
   "name": "react-hooks-practice-toy-tales",
   "type": "module",
@@ -30,7 +31,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server db.json -p 3001",
+    "server": "json-server db.json --port 3001",
     "test": "vitest"
   },
   "eslintConfig": {
